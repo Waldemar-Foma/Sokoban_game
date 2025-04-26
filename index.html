@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sokoban Game</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="loading-screen">
+        <div class="loading-content">
+            <h1 class="loading-title">Sokoban Game</h1>
+            <div class="progress-bar"><div class="progress"></div></div>
+            <p class="loading-text">Foma Studio Presents</p>
+        </div>
+    </div>
+    <div class="main-menu">
+        <div class="menu-content">
+            <h1>Sokoban</h1>
+            <div class="menu-buttons">
+                <button id="play-btn" class="menu-btn"><i class="fas fa-play"></i> <span data-lang="play">Play</span></button>
+                <button id="settings-btn" class="menu-btn"><i class="fas fa-cog"></i> <span data-lang="settings">Settings</span></button>
+            </div>
+        </div>
+    </div>
+    <div class="levels-menu" style="display:none;"><div class="levels-content"><h2 data-lang="select-level">Select Level</h2><div class="levels-grid" id="levels-container"></div><button id="back-to-menu" class="back-btn"><i class="fas fa-arrow-left"></i> <span data-lang="back">Back</span></button></div></div>
+    <div class="settings-menu" style="display:none;"><div class="settings-content"><h2 data-lang="settings">Settings</h2><div class="setting-option"><label for="language-select" data-lang="language">Language:</label><select id="language-select"><option value="en">English</option><option value="ru">Русский</option></select></div><div class="setting-option"><label data-lang="theme">Theme:</label><div class="theme-toggle"><span data-lang="light">Light</span><label class="switch"><input type="checkbox" id="theme-toggle"><span class="slider round"></span></label><span data-lang="dark">Dark</span></div></div><div class="setting-option"><label data-lang="music">Music:</label><div class="theme-toggle"><span data-lang="off">Off</span><label class="switch"><input type="checkbox" id="music-toggle"><span class="slider round"></span></label><span data-lang="on">On</span></div></div><button id="back-to-menu-settings" class="back-btn"><i class="fas fa-arrow-left"></i> <span data-lang="back">Back</span></button></div></div>
+    <div class="game-container" style="display:none;">
+        <div class="game-header"><h2 data-level-name>Level 1</h2><div class="game-stats"><div class="stats-item"><i class="fas fa-shoe-prints"></i><span id="steps-counter">0</span></div><div class="stats-item"><i class="fas fa-clock"></i><span id="timer">00:00</span></div></div></div>
+        <div class="map" id="game-map"></div>
+        <div class="game-controls"><button id="reset-level" class="control-btn"><i class="fas fa-redo"></i> <span data-lang="reset">Reset</span></button><button id="back-to-levels" class="control-btn"><i class="fas fa-list"></i> <span data-lang="levels">Levels</span></button></div>
+        <div class="mobile-controls"><button class="move-btn" data-move="up"></button><div class="horizontal-controls"><button class="move-btn" data-move="left"></button><button class="move-btn" data-move="down"></button><button class="move-btn" data-move="right"></button></div></div>
+        <div class="win-modal" style="display:none;"><div class="win-modal-content"><div class="win-icon"><i class="fas fa-trophy"></i></div><h2 data-lang="you-win">You Win!</h2><p class="win-stats"><span data-lang="time">Time</span>: <span id="win-time">0</span>s, <span data-lang="steps">Steps</span>: <span id="win-steps">0</span></p><div class="win-buttons"><button id="next-level" class="win-btn"> <span data-lang="next-level">Next Level</span></button><button id="back-to-levels-win" class="win-btn"><i class="fas fa-list"></i> <span data-lang="levels">Levels</span></button></div></div></div>
+    </div>
+    <script type="module" src="static/js/game.js"></script>
+    <script type="module" src="static/js/sound.js"></script>
+</body>
+</html>
